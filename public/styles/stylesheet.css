@@ -64,3 +64,8 @@ select {
 fieldset {
   border-radius: 0.5rem;
 }
+/* error message */
+.error {
+    color: darkred;
+    display: none;
+}

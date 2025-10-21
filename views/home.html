@@ -4,23 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Ice Cream Order Form</title>
+    <script src = "js/ice-cream.js" defer></script>
     <link rel="icon" href="images/icecream.png" />
     <link rel="stylesheet" href="styles/stylesheet.css" />
   </head>
   <body>
     <div>
-      <form action="">
+      <form id="iceCream-form" action="#" method="get">
         <h1>Ice Cream Order Form</h1>
         <!-- Personal Info -->
         <fieldset id="info">
           <legend>Personal Information</legend>
-          <label for="name">Name:<input type="text" /></label>
+          <span id="err-name" class="error"> First Name cannot be empty!</span>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name">
           <br />
-          <label for="email">Email:<input type="text" /></label>
+          <span id="err-email" class="error"> Email cannot be empty! or not contain an @!</span>
+          <label for="email">Email:</label>
+          <input type="text" id="email" name="email">
+          <br />
+          
         </fieldset>
 
         <!-- Choose your flavor -->
         <fieldset id="order-detail">
+          <span id="err-flavor" class="error">Please select a flavor</span>
           <legend>Order Details</legend>
           <label for="select">Choose your flavor:</label>
           <select id="flavor" name="flavor">
@@ -28,11 +36,14 @@
             <option value="vanilla">Vanilla</option>
             <option value="chocolate">Chocolate</option>
             <option value="mint">Mint</option>
+            
           </select>
+          <!-- error -->
           <!-- </fieldset> -->
 
           <!-- Choose your Cone -->
           <!-- <fieldset> -->
+          <span id="err-method" class="error"> Cone selection cannot be empty!</span>
           <br />
           <label class="select">Choose your Cone</label>
           <br />
@@ -51,6 +62,7 @@
             <input type="radio" id="Cup" name="method" value="Cup " />
             Cup
           </label>
+          <!-- error -->
           <br />
           <!-- </fieldset> -->
 
@@ -94,7 +106,7 @@
           /></label>
         </fieldset>
 
-        <button type="submit">Submit Order</button>
+        <button type="submit" id="order-button">Submit Order</button>
       </form>
     </div>
   </body>
